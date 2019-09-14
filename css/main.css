@@ -1,0 +1,341 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+}
+
+main {
+  background: #222224;
+  height: 100%;
+  width: 100%;
+}
+
+main section {
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  scroll-snap-align: center;
+}
+
+main section a {
+  text-decoration: none;
+  color: white;
+}
+
+main > :nth-child(1) a {
+  background: radial-gradient(circle at 0 100%, rgba(255, 0, 0, 0.8) 0%, rgba(255, 0, 0, 0.8) 100%);
+  font-weight: bold;
+  padding: 15px 30px;
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
+}
+
+main > :nth-child(1) a:hover {
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
+  background: radial-gradient(circle at var(--x) var(--y), #ff1414 10%, rgba(255, 0, 0, 0.7) 100%);
+}
+
+main > :nth-child(2) a {
+  background: #3f3fff;
+  position: relative;
+  font-weight: bold;
+  padding: 15px 30px;
+}
+
+main > :nth-child(2) a span {
+  z-index: 2;
+  position: relative;
+}
+
+main > :nth-child(2) a::before, main > :nth-child(2) a::after {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+}
+
+main > :nth-child(2) a::before {
+  background: yellow;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+main > :nth-child(2) a::after {
+  background: red;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+main > :nth-child(2) a:hover::before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+main > :nth-child(2) a:hover::after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+main > :nth-child(3) a {
+  font-weight: bold;
+  padding: 15px 30px;
+  background: purple;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.356);
+}
+
+main > :nth-child(3) a::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  top: 0%;
+  left: 0%;
+}
+
+main > :nth-child(3) a span {
+  display: none;
+  position: absolute;
+}
+
+main > :nth-child(3) a span:nth-child(1) {
+  height: 2px;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  background: -webkit-gradient(linear, left top, right top, from(purple), to(white));
+  background: linear-gradient(to right, purple, white);
+}
+
+main > :nth-child(3) a span:nth-child(2) {
+  height: 100%;
+  width: 2px;
+  top: 0%;
+  right: 0%;
+  background: -webkit-gradient(linear, left top, left bottom, from(purple), to(white));
+  background: linear-gradient(to bottom, purple, white);
+}
+
+main > :nth-child(3) a span:nth-child(3) {
+  height: 2px;
+  width: 100%;
+  bottom: 0%;
+  left: 0%;
+  background: -webkit-gradient(linear, right top, left top, from(purple), to(white));
+  background: linear-gradient(to left, purple, white);
+}
+
+main > :nth-child(3) a span:nth-child(4) {
+  height: 100%;
+  width: 2px;
+  top: 0%;
+  left: 0%;
+  background: -webkit-gradient(linear, left bottom, left top, from(purple), to(white));
+  background: linear-gradient(to top, purple, white);
+}
+
+main > :nth-child(3) a:hover span {
+  display: initial;
+}
+
+main > :nth-child(3) a:hover span:nth-child(1) {
+  -webkit-animation: animation1 1s linear infinite;
+          animation: animation1 1s linear infinite;
+}
+
+main > :nth-child(3) a:hover span:nth-child(2) {
+  -webkit-animation: animation2 1s linear infinite;
+          animation: animation2 1s linear infinite;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+main > :nth-child(3) a:hover span:nth-child(3) {
+  -webkit-animation: animation3 1s linear infinite;
+          animation: animation3 1s linear infinite;
+}
+
+main > :nth-child(3) a:hover span:nth-child(4) {
+  -webkit-animation: animation4 1s linear infinite;
+          animation: animation4 1s linear infinite;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+@-webkit-keyframes animation1 {
+  0% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
+@keyframes animation1 {
+  0% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
+@-webkit-keyframes animation2 {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+}
+
+@keyframes animation2 {
+  0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+}
+
+@-webkit-keyframes animation3 {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@keyframes animation3 {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes animation4 {
+  0% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  100% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+}
+
+@keyframes animation4 {
+  0% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  100% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+}
+
+main > :nth-child(4) a {
+  background: #3f3fff;
+  position: relative;
+  font-weight: bold;
+  padding: 15px 30px;
+}
+
+main > :nth-child(4) a::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: yellowgreen;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  -webkit-clip-path: circle(0%);
+          clip-path: circle(0%);
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  -webkit-transition-delay: 0.15s;
+          transition-delay: 0.15s;
+  opacity: 0;
+}
+
+main > :nth-child(4) a::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: red;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  -webkit-clip-path: circle(0%);
+          clip-path: circle(0%);
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  opacity: 0;
+}
+
+main > :nth-child(4) a span {
+  position: relative;
+  z-index: 1;
+}
+
+main > :nth-child(4) a:hover::before {
+  -webkit-clip-path: circle(100%);
+          clip-path: circle(100%);
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  background: yellow;
+  opacity: 1;
+}
+
+main > :nth-child(4) a:hover::after {
+  -webkit-clip-path: circle(100%);
+          clip-path: circle(100%);
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  -webkit-transition-delay: 0.15s;
+          transition-delay: 0.15s;
+  opacity: 1;
+}
+/*# sourceMappingURL=main.css.map */
